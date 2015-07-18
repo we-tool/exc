@@ -4,9 +4,10 @@
 
 ## Features
 
-- Auto-fetch fullpaths for `child_process.spawn`
-- Realtime stdio piping
-- Support for built-in win commands like `dir`, via `child_process.exec` fallback
+- Cross-Platform, via node.js
+- Realtime native stdio, via `spawn` & `pipe`
+- Auto-fetch fullpaths for `spawn`, via `path.resolve` & `shelljs.which`
+- Support for built-in win commands like `dir`, via `exec` fallback
 - Resolve `gbk` to `utf8`, via `iconv-lite`
 
 ## Todo
@@ -37,9 +38,10 @@ npm install exc
 
 ```js
 var exc = require('exc')
-var prc = exc('gulp', ['-v'])
-// (same as:)
-// var spawn = require('child_process').spawn
-// var fullpath = find_fullpath('gulp')
-// var prc = spawn(fullpath, ['-v'])
+exc('gulp', ['-v'], function(err, prc){
+  // (same as:)
+  // var spawn = require('child_process').spawn
+  // var fullpath = find_fullpath('gulp')
+  // var prc = spawn(fullpath, ['-v'])
+})
 ```
