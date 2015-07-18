@@ -1,0 +1,23 @@
+{
+  "name": "exc",
+  "version": "0.0.1",
+  "description": "Tool to Execute Commands",
+  "keywords": [
+    "exc",
+    "execute",
+    "spawn",
+    "command",
+    "binary",
+    "gbk"
+  ],
+  "bin": {
+    "exc": "bin/bin.js"
+  },
+  "repository": "git@github.com:fritx/exc.git",
+  "main": "lib/spawn.js",
+  "dependencies": {
+    "async": "^1.3.0",
+    "iconv-lite": "^0.4.11",
+    "shelljs": "^0.5.1"
+  }
+}
